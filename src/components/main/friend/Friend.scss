@@ -1,0 +1,118 @@
+@import "../../common/common";
+
+
+
+.friend-list{
+  margin-bottom: 10px;
+  position: relative;
+  padding: 10px 5%;
+  box-sizing: border-box;
+}
+
+// 好友申請與好友列表的標題
+.friend-list__title{
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+
+  &-num{
+    font-size: $small_font;
+    color: $light_yellow;
+    background-color: $dark_brwon;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 30px;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  &-show-button{
+    transition: transform 0.3s;
+    transform: rotateZ(0deg);
+    &_show{
+      transform: rotateZ(90deg);
+      transition: transform 0.3s;
+      color: green;
+    }
+  }
+}
+
+.friend-list__section{
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.6s ease;
+  &_show{
+    max-height: 50vh;
+    overflow: scroll;
+    transition: all 0.6s ease;
+  }
+}
+
+// 使用者區塊
+.user-block{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  border: 1px solid $light_gray;
+  border-left: 0;
+  border-right: 0;
+  cursor: pointer;
+  &__avatar-section{
+    position: relative;
+  }
+  &__avatar{
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    background-size: contain;
+    border: none;
+    &_online-status{
+      width: 6px;
+      height: 6px;
+      background-color: green;
+      position: absolute;
+      border-radius: 6px;
+      right: 0;
+      top:0;
+      &_on{
+        background-color: green;
+      }
+      &_off{
+        background-color: darkgray;
+      }
+    }
+  }
+
+  &__nickname{
+    font-size: 20px;
+    max-width: 50%;
+    word-break: break-all;
+    margin-left: 5px;
+  }
+}
+
+//回應交友申請的按鈕
+.friendship-response-btn{
+  &_accept{
+    margin-left: auto;
+    margin-right: 10px;
+    background-color: green;
+  }
+
+  &_disable{
+    margin-left: auto;
+    margin-right: 10px;
+    background-color: #6fca7a;
+    color: #4D4D4D;
+  }
+
+  &_reject{
+    background-color: orangered;
+    margin-right: 10px;
+  }
+}

@@ -21,6 +21,10 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'babel',
                 exclude: /node_modules/,
+                query: {
+                    plugins: ['transform-decorators-legacy'],
+                    presets: ['es2015', 'stage-0', 'react'],
+                }
             },
             {
                 // https://github.com/jtangelder/sass-loader

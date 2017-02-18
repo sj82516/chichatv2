@@ -1,0 +1,23 @@
+.chat-block__nickname{
+    font-size: 22px;
+    margin:0;
+}
+
+.chat-block__info{
+    margin-left: 10px;
+}
+
+.chat-block__last-msg-content{
+    color: darkgray;
+    width: 80%;
+    word-break: break-all;
+    margin:0;
+}
+
+.chat-block__last-msg-time{
+    position: absolute;
+    top: 5px;
+    right: 0;
+    color: darkgray;
+    margin:0;
+}

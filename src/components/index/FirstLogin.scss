@@ -1,0 +1,200 @@
+@import "../common/common";
+
+.first-login {
+  width: 100%;
+  height: 100vh;
+  border: 4px solid $light_yellow;
+  box-sizing: border-box;
+}
+
+.first-login-header {
+  text-align: center;
+  &__title {
+    color: $dark_brwon;
+    font-size: $big_font;
+    margin-top: 15px;
+  }
+  &__subtitle {
+    color: $light_brown;
+    font-size: $small_font;
+    margin-top: 10px;
+  }
+}
+
+.first-login-step-container {
+  width: 80%;
+  height: 72%;
+  margin: 10px auto;
+  background: linear-gradient(45deg,#FFCE07, greenyellow);
+  padding: 10px;
+  position: relative;
+}
+
+//footer:流程步驟顯示
+.first-login-footer{
+  position: relative;
+}
+
+.first-login-footer-steps {
+  width: 100vw;
+}
+
+.first-login-footer-step {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 40px;
+  color: $light_brown;
+  border: 4px solid $light_yellow;
+  box-sizing: content-box;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  $elems: 8;
+  @for $i from 4 to $elems {
+    &:nth-child(#{$i}){
+      left: calc( 90vw * (#{$i - 4}) / 4 + 10vw);
+    }
+  }
+}
+
+.first-login-footer-step-space {
+  width: calc(90vw / 4);
+  display: inline-block;
+  height: 4px;
+  background-color: $light_yellow;
+  box-sizing: border-box;
+  top: calc(50% - 4px);
+  position: absolute;
+  $elems: 4;
+  @for $i from 0 to $elems {
+    &:nth-child(#{$i}){
+      left: calc(( 90vw * (#{$i - 1}) / 4) + 10vw);
+    }
+  }
+}
+
+.first-login-footer-steps-mask{
+  width: calc(10vw + 48px);
+  height: 48px;
+  z-index: 2;
+  margin-top: 0;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  transition: width 1s ease;
+  .first-login-footer-step-space-mask{
+    @extend .first-login-footer-step-space;
+    background-color: $dark_brwon;
+    position: absolute;
+    z-index: 2;
+  }
+  .first-login-footer-step-mask{
+    @extend .first-login-footer-step;
+    background-color: $dark_brwon;
+    border-color: $dark_brwon;
+    color: white;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+  }
+}
+
+.first-login-form__next-button{
+  width: calc(100% - 20px);
+  border: none;
+  display: flex;
+  justify-content: center;
+
+  position: absolute;
+  bottom: 10px;
+}
+
+/* step1 */
+.form-input-section{
+  margin-top: 16px;
+  &__input-lable{
+    color: rgb(105, 77, 0);
+    font-size: 18px;
+    letter-spacing: 5px;
+  }
+}
+.image-crop-area{
+  width: 100%;
+  height: 40vh;
+  background-color: #D8D8D8;
+  box-sizing: border-box;
+}
+
+.image-crop-area__button{
+  width: 50%;
+  height: 40px;
+  font-size: $small_font;
+  line-height: 40px;
+  margin-top: 10px;
+  background-color: transparent;
+  border: 2px solid $dark_brwon;
+}
+
+.image-crop-area_cropper{
+  max-height:40vh;
+  overflow: scroll;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.image-crop-area__upload-button{
+  @extend .image-crop-area__button;
+  width: 100%;
+}
+
+// 使用者瀏覽個人資料
+.user-info__area{
+  width: 100%;
+  height: 200px;
+  border-radius: 20px;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10%;
+  box-shadow: 0px 0px 15px #888888;
+}
+
+.user-info__bgImg{
+  position: absolute;
+  z-index: 1;
+  top:0;
+  left:0;
+  height: auto;
+  width: 100%;
+  filter: blur(2px);
+}
+
+.user-info__avatar{
+  position: absolute;
+  z-index: 2;
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  top:30%;
+  left:5%;
+  box-shadow: 0px 0px 15px #888888;
+}
+
+.user-info__nickname{
+  position: absolute;
+  top: calc(20% + 10px);
+  z-index: 2;
+  left: calc( 10% + 80px);
+  font-size: $mid_font;
+  word-wrap: break-word;
+  width: 55%;
+}
+
+.user-info__title{
+  color: $dark_brwon;
+  font-size: $small_font;
+}

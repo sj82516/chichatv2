@@ -1,0 +1,139 @@
+$logo_height: 20%;
+$form_height: 420px;
+@import "../common/common";
+
+.index-form{
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  border: #694D00 1px solid;
+  overflow: scroll;
+}
+
+// logo 設定含動畫
+.index__logo {
+  width: 100%;
+  margin: 0 auto;
+
+  animation: logoAnimation 2s 1 ease forwards;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.index__logo-image {
+  min-width: 220px;
+  width: 55%;
+  max-width: 300px;
+  height: auto;
+  margin-right: 3%;
+}
+
+@keyframes logoAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// 切換表單型態
+.form-type {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  box-sizing: border-box;
+  border-bottom: 4px solid $dark_brwon;
+  font-size: $big_font;
+  color: $dark_brwon;
+  margin: 0;
+  &__btn {
+    cursor: pointer;
+    &_unclicked {
+      color: $dark_brwon;
+    }
+    &_clicked{
+      color: $light_yellow;
+    }
+  }
+}
+
+// 表單
+.index-form-wrapper {
+  border: 6px $light_yellow solid;
+  border-radius: 0 40px 40px 40px;
+  padding: 2% 3%;
+  margin: 0 auto;
+  overflow: scroll;
+  width: 60%;
+  min-width: 240px;
+  opacity: 0;
+  max-height: 0;
+
+  animation: formWrapperAnimation 1.5s 2s 1 ease forwards;
+}
+
+// 社交登入按鈕們
+.social-media-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  .fa{
+    color: white;
+  }
+}
+
+@keyframes logoAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// form animation
+// 先展開form，將logo推到正確位置
+@keyframes formAnimation {
+  0% {
+    opacity: 1;
+    padding: 0;
+    max-height: 0;
+    min-height: 0;
+  }
+  100% {
+    opacity: 1;
+    min-height: $form_height;
+  }
+}
+
+// formwarpper animation
+// 展開form後，formwrapper再展開，呈現拉開表單的動畫
+@keyframes formWrapperAnimation {
+  0% {
+    opacity: 1;
+    max-height: 0;
+  }
+  100% {
+    opacity: 1;
+    height: auto;
+    max-height: $form_height;
+  }
+}
+
+.form-seperate-line{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: $dark_brwon;
+}

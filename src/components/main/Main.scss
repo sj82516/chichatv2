@@ -1,0 +1,158 @@
+@import "../common/common";
+$nav_height: 60px;
+.main-title-bar{
+  height: $nav_height;
+  background-color: $dark_brwon;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.main-title-bar__title{
+  font-size: $mid_font;
+  color: white;
+  margin: 0 10%;
+  width: 100%;
+  line-height: 36px;
+}
+
+.main-title-bar__action-button{
+  color: white;
+  display: flex;
+  justify-content: center;
+  background-color: $dark_brwon;
+  float: right;
+  cursor: pointer;
+}
+.main-title-bar__search-title{
+  height: $mid_font;
+  line-height: 24px;
+}
+.main-nav{
+  display: flex;
+  height: $nav_height;
+  background-color: $dark_brwon;
+  &__item{
+    flex: 1;
+    display: flex;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    flex-direction: column;
+    &_active{
+      background-color: $light_yellow;
+    }
+  }
+}
+.main-container{
+  padding: 10px 10%;
+  box-sizing: border-box;
+}
+
+// 搜尋
+.search-user-block, .chatroom-block{
+  position: absolute;
+  right: 0;
+  top: calc( #{$nav_height} - 1px );
+  background-color: $dark_brwon;
+  left: 100vw;
+  width: 100vw;
+  height: calc(100vh - 60px);
+  transition: left 0.5s ease;
+  overflow: hidden;
+  z-index: 10;
+  &_show{
+    left: 0;
+  }
+}
+.search-user-bar{
+  display: flex;
+  justify-content: center;
+}
+.search-user-input{
+  width: 80%;
+  height: 24px;
+  font-size: 18px;
+  margin: 10px 0;
+  padding-left: 10px;
+  border-radius: 5px;
+  &::placeholder{
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+.search-user-results{
+  padding: 0 10%;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+
+// 對話
+.chatroom-send-message{
+  height: 8%;
+  box-sizing: border-box;
+  &__input{
+    width: 80%;
+    height: 100%;
+    font-size: 20px;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  &__button{
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 20px;
+  }
+}
+.chatList-room{
+  height: 88%;
+  box-sizing: border-box;
+  width: 100%;
+  margin: auto;
+  overflow-y: scroll;
+  background: linear-gradient(to bottom right, $light_brown, $light_yellow);
+  padding: 0 10px;
+  &__title{
+    font-size: 18px;
+    margin: 0 0 10px 5%;
+    color: yellow;
+  }
+}
+.message-block{
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  cursor: pointer;
+  &__avatar-section{
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+.message-content{
+  max-width: 50%;
+  margin-bottom: 10px;
+  display: flex;
+  font-size: 22px;
+  word-wrap: break-word;
+  flex-direction: column;
+  align-items: flex-end;
+  &__text{
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: white;
+    max-width: 100%;
+    display: inline-block;
+    margin: 0;
+  }
+  &__time{
+    color: #3f3f3f;
+    font-size: 15px;
+    margin-top: 4px;
+    text-align: end;
+    margin: 0;
+  }
+}
