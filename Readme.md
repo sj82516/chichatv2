@@ -1,5 +1,6 @@
 ### ChiChat V2  
-此專案從[ChiChat V1](https://github.com/sj82516/chichat)複寫而來  
+此專案從[ChiChat V1](https://github.com/sj82516/chichat)複寫而來，[操作影片連結](https://vimeo.com/205770226)   
+網站連結:[yuanchieh.com](https://yuanchieh.com/)，測試帳號可用 123@g.com / 123asd  
 #### 功能
 ・基本的帳號登入、註冊，以及欄位驗證
 ・串連OAUTH第三方登入，包含Google+/ Github/ Facebook
