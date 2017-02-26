@@ -5,6 +5,9 @@
 ・串連OAUTH第三方登入，包含Google+/ Github/ Facebook
 ・瀏覽器端保存資料，讓使用者重整頁面可直接登入
 ・即時通訊，包含加好友、回應好友請求與即時傳送訊息等功能
+![Imgur](http://i.imgur.com/lpODYux.jpg)
+![Imgur](http://i.imgur.com/Txt4LnS.jpg)
+![Imgur](http://i.imgur.com/TFOEa50.jpg)
 #### 實作紀錄
 ・加入Redux Saga將 資料邏輯與頁面更新邏輯切開  
 登入、註冊、發送訊息等AJAX Call或是使用Indexed DB，這些Async Call都必須針對回傳結果在做近一步的處理，像是登入還必須處理成功或失敗，或是有帳號、密碼錯誤等機制  
